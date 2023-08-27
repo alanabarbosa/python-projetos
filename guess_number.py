@@ -1,10 +1,9 @@
 import random
 
-win = 0
-
 def guess_number():
     while True:
-        rand_num = random.getrandbits(2)
+        win = 0
+        rand_num = random.getrandbits(8)
         number = input("Digite um número: ")
 
         if number.isdigit():       

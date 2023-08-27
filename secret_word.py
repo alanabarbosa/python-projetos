@@ -1,27 +1,28 @@
-secret_lyrics = 'javascript'
-correct_lyrics = ''
+def secret_word():
+    while True:
+        secret_lyrics = 'javascript'
+        correct_lyrics = ''
+        loser = 0
+        word_letter = input("Digite uma letra: ")
+        if len(word_letter) > 1:
+            print('Digite apenas uma letra.')
+            continue
 
-loser = 0
+        if word_letter in secret_lyrics:
+            correct_lyrics += word_letter
+        else:        
+            loser += 1
+            if loser == 15:
+                print('\nVocê perdeu todas as tentativas\n')
+                play_again = input('Deseja jogar novamente? (S/N): ').upper()
+                if play_again != 'S':
+                    break
 
-while True:
-    word_letter = input("Digite uma letra: ")
+        for secret_lyric in secret_lyrics:
+            if secret_lyric in correct_lyrics:
+                print(secret_lyric)
+            else:
+                print('*')
 
-    if len(word_letter) > 1:
-        print('Digite apenas uma letra.')
-        continue
 
-    if word_letter in secret_lyrics:
-        correct_lyrics += word_letter
-    else:        
-        loser += 1
-        if loser == 15:
-            print('\nVocê perdeu todas as tentativas\n')
-            play_again = input('Deseja jogar novamente? (S/N): ').upper()
-            if play_again != 'S':
-                break
-
-    for secret_lyric in secret_lyrics:
-        if secret_lyric in correct_lyrics:
-            print(secret_lyric)
-        else:
-            print('*')
+secret_word()

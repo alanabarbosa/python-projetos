@@ -25,9 +25,9 @@ def quiz():
                     print('Você errou \n')
             elif user_input.upper() == 'F':
                 if condition:
-                    print('Você errou \n')
+                    print('\nVocê errou \n')
                 else:
-                    print('Parabéns, você acertou! \n')
+                    print('\nParabéns, você acertou! \n')
                     correct_answers += 1
 
             print(f'\nVocê acertou {correct_answers} perguntas \n--------------------------\n')      
